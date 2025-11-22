@@ -109,6 +109,12 @@ git branch -M main
 git remote add origin git@github.com:md-sarowar-alam/guide-line.git
 git push -u origin main
 ```
-
 ---
 
+## 🧑‍💻 Author
+**Md. Sarowar Alam**  
+Lead DevOps Engineer, Hogarth Worldwide  
+📧 Email: sarowar@hotmail.com  
+🔗 LinkedIn: [linkedin.com/in/sarowar](https://www.linkedin.com/in/sarowar/)
+
+---
