@@ -66,7 +66,6 @@ git fetch origin
 git reset --hard origin/main
 git push --force origin feature/my-change
 ```
-------------------------------------------------------------------------
 ###Create a new branch (best practice: don't work on main)
 ``` bash
 git checkout -b feature/edit-readme
@@ -105,3 +104,4 @@ git commit
 ``` bash
 git push -u origin feature/edit-readme
 ```
+------------------------------------------------------------------------
