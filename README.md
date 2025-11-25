@@ -20,14 +20,14 @@ wsl --export Ubuntu-24.04 "C:\WSL-Backup\Ubuntu-Backup.tar"
 ```
 ### Restore WSL
 ``` powershell
-wsl --import Ubuntu "C:\WSL" "C:\WSL-Backup\Ubuntu-Backup.tar"
+wsl --import Ubuntu-24.04 "." "C:\WSL-Backup\Ubuntu-Backup.tar"
 ```
 ### Delete Corrupted WSL Instance
 ``` powershell
-wsl --unregister Ubuntu
+wsl --unregister Ubuntu-24.04
 ```
 ------------------------------------------------------------------------
-### Install Git on Ubuntu
+### 1) Install Git on Ubuntu
 **Installation**
 ``` bash
 sudo apt install git -y
@@ -164,3 +164,12 @@ git push -u origin main
 git remote -v
 ```
 ------------------------------------------------------------------------
+---
+
+## 🧑‍💻 Author
+**Md. Sarowar Alam**  
+Lead DevOps Engineer, Hogarth Worldwide  
+📧 Email: sarowar@hotmail.com  
+🔗 LinkedIn: [linkedin.com/in/sarowar](https://www.linkedin.com/in/sarowar/)
+
+---
