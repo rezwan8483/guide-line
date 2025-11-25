@@ -104,4 +104,50 @@ git commit
 ``` bash
 git push -u origin feature/edit-readme
 ```
+### Merge main into your branch (simple & safe)
+``` bash
+cd batch-08-class-git
+git checkout feature/test-change-02
+git pull origin main
+# or (same thing)
+git merge origin/main
+```
+------------------------------------------------------------------------
+### Here is exactly how to create a repo locally and push it to GitHub
+### Create a local folder for your new repository
+``` bash
+mkdir my-new-repo
+cd my-new-repo
+```
+### Initialize Git
+``` bash 
+git init
+```
+### Set default branch to main (recommended):
+``` bash
+git branch -M main
+```
+### Create some files
+``` bash
+echo "Hello GitHub" > README.md
+```
+### Stage and commit your files
+``` bash
+git add .
+git commit -m "Initial commit"
+```
+### Create a remote repository on GitHub
+### Use GitHub CLI (gh)
+``` bash
+gh repo create my-new-repo --public --source=. --remote=origin
+gh repo create my-new-repo --private --source=. --remote=origin
+```
+### Push your local repo to GitHub
+``` bash
+git push -u origin main
+```
+### Done! Your repo is now on GitHub.
+``` bash
+git remote -v
+```
 ------------------------------------------------------------------------
