@@ -163,6 +163,36 @@ git push -u origin main
 ``` bash
 git remote -v
 ```
+### Merge one Branch into another
+``` bash
+git checkout feature/my-change-01
+git fetch origin
+git pull --rebase origin feature/my-change-01
+git merge feature/my-change-02
+```
+### Revert & Reset Operations | Safe Revert (Creates new commit)
+``` bash
+git revert -m 1 7f076de5fed8cf5ac9cb544fa0f6e28e4243ed6d
+git push origin main
+```
+### Dangerous Reset (Rewrites history)
+``` bash
+git reset --hard 38f5d6
+git push origin main --force
+```
+### Warning: --force push overwrites remote history. Use with caution!
+### Cleanup Operations | Delete Branches | Delete local branch
+``` bash
+git branch -d feature/my-change-01
+```
+### Force delete local branch
+``` bash
+git branch -D feature/my-change-01
+```
+### Delete remote branch
+``` bash
+git push origin --delete feature/my-change-01
+```
 ------------------------------------------------------------------------
 ---
 
