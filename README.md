@@ -37,6 +37,47 @@ sudo apt install git -y
 git --version
 ```
 ------------------------------------------------------------------------
+### GitHub CLI Setup (Ubuntu)
+``` bash
+sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh -y
+gh --version
+# Login
+gh auth login
+```
+------------------------------------------------------------------------
+### How to Clone my private Repo in Ubuntu
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+### Create a Local Git Repository
+``` bash
+#Create a folder
+mkdir my-local-repo-creation-private
+cd my-local-repo-creation-private
+# Initialize git
+git init
+# Add files
+echo "Hello World" > readme.txt
+git add .
+# Commit
+git commit -m "Creating repo from Ubuntu"
+```
+### Create a GitHub Repository from Command Line (GitHub CLI)
+``` bash
+gh repo create my-local-repo-creation-private --private --source=. --remote=origin --push
+```
+------------------------------------------------------------------------
 ### Git Examples | Clone Specific Branch
 ``` bash
 git clone --branch feature/test-change-02 --single-branch git@github.com:md-sarowar-alam/batch-08-class-git.git
@@ -114,18 +155,6 @@ git checkout feature/test-change-02
 git pull origin main
 # or (same thing)
 git merge origin/main
-```
-------------------------------------------------------------------------
-## GitHub CLI Setup (Ubuntu)
-
-``` bash
-sudo apt install curl -y
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update
-sudo apt install gh -y
-gh --version
 ```
 ------------------------------------------------------------------------
 ### Here is exactly how to create a repo locally and push it to GitHub | Create a local folder for your new repository
