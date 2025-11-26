@@ -27,7 +27,7 @@ wsl --import Ubuntu-24.04 "." "C:\WSL-Backup\Ubuntu-Backup.tar"
 wsl --unregister Ubuntu-24.04
 ```
 ------------------------------------------------------------------------
-### 1) Install Git on Ubuntu
+### Install Git on Ubuntu
 **Installation**
 ``` bash
 sudo apt install git -y
@@ -51,9 +51,25 @@ gh auth login
 ```
 ------------------------------------------------------------------------
 ### How to Clone my private Repo in Ubuntu
-
-
-
+``` bash
+ssh-keygen -t ed25519 -C "md-sarowar-alam"
+cat ~/.ssh/id_ed25519.pub
+# Go to https://github.com/settings/keys and save the key 
+ssh -T git@github.com
+# Success Message 
+### Hi md-sarowar-alam! You've successfully authenticated, but GitHub does not provide shell access.
+```
+### => Now you can clone any repo from yor added Git
+``` bash
+git clone git@github.com:md-sarowar-alam/ostad-class-08.git
+```
+### Create a file and Push to remote repo 
+``` bash
+git status
+git add README.md
+git commit -m "Add my First File"
+git push origin main
+```
 
 
 
