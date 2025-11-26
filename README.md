@@ -85,9 +85,91 @@ git push -u origin feature/my-branch
 # Get Latest update of the branch from Remote Repo while local branch Selected * feature/my-branch
 git pull
 ```
+### Sync Branch with Main (Fresh Update from main → branch) | it won't work if there is no commit to any file.
+``` bash
+git checkout feature/my-branch
+git fetch origin
+git merge origin/main
+```
+### Sync Branch with Main | Rebase (fresh start, cleaner history)
+``` bash
+git checkout feature/my-branch
+git fetch origin
+git rebase origin/main
+```
 
-
-
+### if there is any conflict and you want to refresh branch as main 
+``` bash 
+# Discard all local changes
+git reset --hard
+# Switch to the branch you want to refresh
+git checkout feature/my-branch
+# Reset that branch to match main
+git fetch origin
+git reset --hard origin/main
+# Update this to Remote Branch 
+git push origin feature/my-branch --force
+```
+### if you want to Delete the Branch Instead
+``` bash
+git checkout main
+git branch -D feature/my-branch
+```
+------------------------------------------------------------------------
+### you Have udpated and fixed branch and you want to merge that to main 
+``` bash 
+# Switch to main
+git checkout main
+# Make sure main is up to date
+git pull origin main
+# Merge the branch into main
+git merge feature/my-branch
+# Push the updated main to remote
+git push origin main
+```
+### Get the log of all 
+``` bash 
+git log --oneline --graph --decorate --all
+```
+------------------------------------------------------------------------------------------------------------------------------------------------
+### Create a branch from feature/my-branch
+``` bash 
+git checkout feature/my-branch
+git checkout -b feature/my-branch-from-branch
+# Edit files and commit
+vi README.md
+git add .
+git commit -m "Update from branch-based branch"
+# Push this branch to remote
+git push -u origin feature/my-branch-from-branch
+```
+### Create a branch from main
+``` bash
+git checkout main
+git checkout -b feature/my-branch-from-main
+# Edit files and commit
+vi README.md
+git add .
+git commit -m "Update from main-based branch"
+# Push this branch to remote
+git push -u origin feature/my-branch-from-main
+```
+### Merge feature/my-branch-from-main into feature/my-branch-from-branch
+``` bash
+git checkout feature/my-branch-from-branch
+git fetch origin
+git merge origin/feature/my-branch-from-main
+# Resolve conflicts if any | Commit merge
+git push origin feature/my-branch-from-branch
+```
+### Merge feature/my-branch-from-branch into feature/my-branch-from-main
+``` bash
+git checkout feature/my-branch-from-main
+git fetch origin
+git merge origin/feature/my-branch-from-branch
+# Resolve conflicts if any | Commit merge
+git push origin feature/my-branch-from-main
+```
 ------------------------------------------------------------------------
 ### Create a Local Git Repository
 ``` bash
