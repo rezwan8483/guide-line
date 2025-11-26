@@ -171,6 +171,15 @@ git merge origin/feature/my-branch-from-branch
 git push origin feature/my-branch-from-main
 ```
 ------------------------------------------------------------------------
+### If you find any conflict
+``` bash 
+# Open the file and resolve conflict
+vi README.md
+git add . 
+git commit -m "Merge feature/my-branch-from-main into feature/my-branch-from-branch"
+git push origin feature/my-branch-from-branch
+```
+------------------------------------------------------------------------
 ### Create a Local Git Repository
 ``` bash
 #Create a folder
