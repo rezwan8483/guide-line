@@ -438,8 +438,9 @@ git push origin main
 
 ## STEP 7 --- Push the Branch to Your Fork
 
+    git remote set-url origin git@github.com:md-sarowar-alam/sarowar.git
     git push origin feature/my-new-change
-
+    
 ------------------------------------------------------------------------
 
 ## STEP 8 --- Create Pull Request
