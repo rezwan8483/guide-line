@@ -24,6 +24,7 @@ wsl --import Ubuntu-24.04 "." "C:\WSL-Backup\Ubuntu-Backup.tar"
 ```
 ### Delete Corrupted WSL Instance
 ``` powershell
+wsl --list --verbose
 wsl --unregister Ubuntu-24.04
 ```
 ------------------------------------------------------------------------
