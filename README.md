@@ -353,6 +353,153 @@ git commit
 ```
 
 ---
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# Complete Forking Workflow (Step-by-Step)
+
+## STEP 1 --- Fork the Repository (on GitHub)
+
+-   Go to the original repository\
+-   Click **Fork**\
+-   Choose your GitHub account\
+-   Your fork is created: `github.com/yourname/repo`
+
+🎉 You now have your **origin** fork.
+
+------------------------------------------------------------------------
+
+## STEP 2 --- Clone Your Fork
+
+``` bash
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+```
+
+------------------------------------------------------------------------
+
+## STEP 3 --- Add Upstream Remote
+
+Your local repo only knows about your fork (`origin`).\
+Add the original repo as `upstream`.
+
+``` bash
+git remote add upstream https://github.com/ORIGINAL_OWNER/REPO_NAME.git
+```
+
+Verify:
+
+``` bash
+git remote -v
+```
+
+Example:
+
+    origin    https://github.com/yourname/repo.git (fetch)
+    upstream  https://github.com/original/repo.git (fetch)
+
+------------------------------------------------------------------------
+
+## STEP 4 --- Stay Updated with Upstream
+
+Always sync before starting new work.
+
+``` bash
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+Or safer:
+
+``` bash
+git pull upstream main
+```
+
+Push updated main to your fork:
+
+``` bash
+git push origin main
+```
+
+------------------------------------------------------------------------
+
+## STEP 5 --- Create a Feature Branch
+
+    git checkout -b feature/my-new-change
+
+------------------------------------------------------------------------
+
+## STEP 6 --- Do Your Work
+
+    git add .
+    git commit -m "Add new feature"
+
+------------------------------------------------------------------------
+
+## STEP 7 --- Push the Branch to Your Fork
+
+    git push origin feature/my-new-change
+
+------------------------------------------------------------------------
+
+## STEP 8 --- Create Pull Request
+
+-   Go to your fork on GitHub\
+-   Click **Compare & pull request**\
+-   Create PR from your fork → upstream/main
+
+------------------------------------------------------------------------
+
+## STEP 9 --- Make Requested Changes
+
+    git add .
+    git commit -m "Fix review comments"
+    git push origin feature/my-new-change
+
+PR updates automatically.
+
+------------------------------------------------------------------------
+
+## STEP 10 --- Merge (Maintainer Does This)
+
+Maintainer approves & merges into upstream.\
+Your fork becomes outdated → **repeat Step 4**.
+
+------------------------------------------------------------------------
+
+## 📌 Workflow Diagram
+
+               +----------------------------+
+               |      Upstream Repo         |
+               |   original project owner   |
+               +-------------+--------------+
+                             ^
+                             | Pull Request
+                             |
+             +---------------+----------------+
+             |        Your Fork (origin)     |
+             |   github.com/yourname/repo    |
+             +---------------+----------------+
+                             ^
+                             |
+                             | git push
+                             v
+                    +--------+--------+
+                    |   Local Repo    |
+                    +-----------------+
+
+------------------------------------------------------------------------
+
+## 🔒 Why Forking Workflow Is Secure
+
+  Action                        Allowed?
+  ----------------------------- ----------
+  Direct push to main repo      ❌ No
+  PR-based merge                ✔ Yes
+  Editing your fork             ✔ Yes
+  Accidental deletion of main   ❌ No
+  Force push to upstream        ❌ No
+
 
 ## 🧑‍💻 Author
 **Md. Sarowar Alam**  
