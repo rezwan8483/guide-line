@@ -468,7 +468,7 @@ Your fork becomes outdated → **repeat Step 4**.
 
 ------------------------------------------------------------------------
 
-## 📌 Workflow Diagram
+## Workflow Diagram
 
                +----------------------------+
                |      Upstream Repo         |
@@ -491,7 +491,7 @@ Your fork becomes outdated → **repeat Step 4**.
 
 ------------------------------------------------------------------------
 
-## 🔒 Why Forking Workflow Is Secure
+## Why Forking Workflow Is Secure
 
   Action                        Allowed?
   ----------------------------- ----------
